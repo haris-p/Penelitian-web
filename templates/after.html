@@ -44,10 +44,17 @@
                 objson['data2'] = objson['data2'].replace("[", "")
                 objson['data2'] = objson['data2'].replace("]", "")
                 objson['data2'] = objson['data2'].split(",")
+                console.log(objson['data2'])
+                console.log(objson['data1'])
+                const index = objson['data1'].indexOf("");
+                console.log(index)
+                objson['data1'].splice(index,1)
                 for (i = 0; i < objson['data1'].length; i++) {
                     objson['data2'].unshift(NaN);
                     if (objson['data1'][i] == 0) objson['data1'][i] = NaN
                 }
+                console.log(objson['data2'])
+                console.log(objson['tahun'])
                 var ctx = document.getElementById('myChart').getContext('2d');
                 var myChart = new Chart(ctx, {
                     type: 'line',

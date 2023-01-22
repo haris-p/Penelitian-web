@@ -26,7 +26,7 @@ def home():
     df_prod=konsumsi.loc[konsumsi['Bahan_Pangan'] == data1]
     y=df_prod['Jumlah_Konsumsi']
     # json = y.to_json(orient='records')[1:-1].replace('},{', '} {')
-    mod = sm.tsa.statespace.SARIMAX(y, order=(0, 0, 0),seasonal_order=(1, 0, 1, 12),enforce_stationarity=True, enforce_invertibility=False)
+    mod = sm.tsa.statespace.SARIMAX(y, order=(0, 1, 0),seasonal_order=(1, 0, 0, 12),enforce_stationarity=True, enforce_invertibility=False)
     results = mod.fit()
     # results.summary().tables[1]
 
